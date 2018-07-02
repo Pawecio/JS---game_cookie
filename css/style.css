@@ -1,0 +1,68 @@
+
+.cookie{
+  height: 300px;
+  width: 500px;
+  align-items: center;
+  border: 5px solid black;
+}
+.cookie:hover{
+  height: 350px;
+  width: 550px;
+  border: 8px solid black;
+}
+section{
+  padding: 20px;
+}
+.score_div{
+  float: right;
+}
+.pointer_div{
+  height: 70px;
+  width: 70px;
+  border: 1px solid black;
+  background-color: yellow;
+}
+.pointer_div:hover{
+  height: 80px;
+  width: 80px;
+}
+.grandma_div{
+  height: 70px;
+  width: 70px;
+  border: 1px solid black;
+  background-color: red;
+}
+.grandma_div:hover{
+  height: 80px;
+  width: 80px
+}
+.farm_div{
+  height: 70px;
+  width: 70px;
+  border: 1px solid black;
+  background-color: green;
+}
+.farm_div:hover{
+  height: 80px;
+  width: 80px
+}
+.bakery_div{
+  height: 70px;
+  width: 70px;
+  border: 1px solid black;
+  background-color: gray;
+}
+.bakery_div:hover{
+  height: 80px;
+  width: 80px
+}
+.mine_div{
+  height: 70px;
+  width: 70px;
+  border: 1px solid black;
+  background-color: purple;
+}
+.mine_div:hover{
+  height: 80px;
+  width: 80px
+}
