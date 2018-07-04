@@ -4,7 +4,6 @@ var cookieCounter;
 var producePS;
 
 makers = function(){
-
   cookieCounter = 0;
   producePS = 0;
 
@@ -48,7 +47,9 @@ makers = function(){
 
     incCookieCounter: function(value) {
       cookieCounter += value;
+      localStorage.setItem('cookieCounter', JSON.stringify(cookieCounter));
     },
+
 
     setproducePS: function(value) {
       producePS = value;
@@ -60,6 +61,7 @@ makers = function(){
 
     incproducePS: function(value) {
       producePS += value;
+      localStorage.setItem('producePS', JSON.stringify(producePS));
     },
 
     setCoursorPrice: function(value) {
@@ -80,16 +82,19 @@ makers = function(){
 
     incCursorVol:  function(value) {
       cursor.vol += value;
+      localStorage.setItem('cursor.vol', JSON.stringify(cursor.vol));
     },
 
     incCursorPrice: function(value) {
       cursor.price *= value;
+      localStorage.setItem('cursor.price', JSON.stringify(cursor.price));
     },
 
 
 
     setGrandmaPrice: function(value) {
       grandma.price = value;
+
     },
 
     setGrandmaVol: function(value) {
@@ -101,6 +106,7 @@ makers = function(){
 
     getGrandmaPrice: function() {
       return Math.floor(grandma.price);
+
     },
 
     getGrandmaVol: function() {
@@ -113,14 +119,17 @@ makers = function(){
 
     incGrandmaPrice: function(value) {
       grandma.price *= value;
+      localStorage.setItem('grandma.price', JSON.stringify(grandma.price));
     },
 
     incGrandmaVol: function(value){
       grandma.vol += value;
+      localStorage.setItem('grandma.vol', JSON.stringify(grandma.vol));
     },
 
     incGrandmaPPS: function(value) {
       grandma.pps += value;
+      localStorage.setItem('grandma.pps', JSON.stringify(grandma.pps));
     },
 
 
@@ -151,14 +160,17 @@ makers = function(){
 
     incFarmPrice: function(value) {
       farm.price *= value;
+      localStorage.setItem('farm.price', JSON.stringify(farm.price));
     },
 
     incFarmVol: function(value) {
       farm.vol += value;
+      localStorage.setItem('farm.vol', JSON.stringify(farm.vol));
     },
 
     incFarmPPS: function(value) {
       farm.pps += value;
+      localStorage.setItem('farm.pps', JSON.stringify(farm.pps));
     },
 
 
@@ -189,14 +201,17 @@ makers = function(){
 
     incBakeryPrice: function(value) {
       bakery.price *= value;
+      localStorage.setItem('bakery.price', JSON.stringify(bakery.price));
     },
 
     incBakeryVol: function(value) {
       bakery.vol += value;
+      localStorage.setItem('bakery.vol', JSON.stringify(bakery.vol));
     },
 
     incBakeryPPS: function(value) {
       bakery.pps += value;
+      localStorage.setItem('bakery.pps', JSON.stringify(bakery.pps));
     },
 
 
@@ -227,31 +242,32 @@ makers = function(){
 
     incMinePrice: function(value) {
       mine.price *= value;
+      localStorage.setItem('mine.price', JSON.stringify(mine.price));
     },
 
     incMineVol: function(value) {
       mine.vol += value;
+      localStorage.setItem('mine.vol', JSON.stringify(mine.vol));
     },
 
     incMinePPS: function(value) {
       mine.pps += value;
+      localStorage.setItem('mine.pps', JSON.stringify(mine.pps));
     },
-
 
   };
 };
 
-
+var cookieCounterToView;
 
 makers();
 var mainCookie = $('.cookie');
 var button = $('.btn');
 var amount = $('.amount');
-var cookieCounterToView = 0;
+cookieCounterToView = 0;
 
 var productivityDisplay = $('.productivity');
 amount.text(cookieCounterToView);
-//var cookieAmountToView = 0;
 
 var cost ={
   cursor: 15,
@@ -297,21 +313,23 @@ mainCookie.on("click", function () {
   cookieCounterToView++;
   engine.incCookieCounter(1);
   amount.text(shorten(cookieCounterToView));
+  localStorage.setItem('cookieCounterToView', JSON.stringify(cookieCounterToView));
 });
+
 
 setInterval(function(){
   cookieCounterToView += cursor.vol;
   engine.incCookieCounter(cursor.vol);
   amount.text(shorten(cookieCounterToView));
+  localStorage.setItem('cookieCounterToView', JSON.stringify(cookieCounterToView));
 },10000);
 
 setInterval(function(){
   cookieCounterToView += engine.getproducePS();
   engine.incCookieCounter(engine.getproducePS());
   amount.text(shorten(cookieCounterToView));
+  localStorage.setItem('cookieCounterToView', JSON.stringify(cookieCounterToView));
 }, 1000);
-
-
 
 button.on('click', function(){
   var attribute = $(this).attr('data-name');
@@ -401,7 +419,22 @@ button.on('click', function(){
         engine.incproducePS(260);
         productivityDisplay.text(shorten(engine.getproducePS()));
     }
+});
 
 
+$('#reset').click(function(){
+	localStorage.clear();
+	return false;
+});
+$('continue').click(function(){
+  if (localStorage.getItem('cookieCounter')) {
+    cookieCounter = JSON.parse(localStorage.getItem('cookieCounter'));
+  }
+  if (localStorage.getItem('cookieCounterToView')) {
+    cookieCounterToView = JSON.parse(localStorage.getItem('cookieCounterToView'));
+  }
+  if (localStorage.getItem('grandma.price')) {
+    engine.grandma.price = JSON.parse(localStorage.getItem('grandma.price'));
+  }
 
 });
