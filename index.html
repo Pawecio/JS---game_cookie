@@ -10,106 +10,122 @@
   </head>
 <body>
     <div class="container">
-      <div class="cookie"></div>
-    </div>
-    <div class="score_div">
-      <div>
-        <h1>SCORE:</h1>
+      <div class="cookie">
+        <img src="image/cookies.png" alt="coookieeeessss">
       </div>
-      <p>You have <span class="amount">0</span> cookies</p>
-      <p>&</p>
-      <p>Produce <span class="productivity">0</span> cookies per second</p>
     </div>
-    <!-- POINTER -->
+
   <section>
-    <div class="row makers">
-      <div class="col-3">
-        <div class="popup">
-          <p>Autoclick once every <span>10</span> seconds</p>
-          <p>You have <span class="amountOfMakers cursor-vol">0</span> cursor(s)</p>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <!-- CURSOR -->
+      <div class="row makers">
+        <div class="col-3">
+          <img class="avatar" src="image/cursor.png" alt="cursor">
+          <div class="popup">
+            <p>Autoclick once every <span>10</span> seconds</p>
+            <p>You have <span class="amountOfMakers cursor-vol">0</span> cursor(s)</p>
+          </div>
+        </div>
+        <div class="col-3 cost">
+          <span class="price cursor-price">15</span>
+        </div>
+        <div class="col-6">
+          <button class="btn btn-warning my_btn" data-name="cursor">CURSOR</button>
         </div>
       </div>
-      <div class="col-3 cost">
-        <span class="price cursor-price">15</span>
-      </div>
-      <div class="col-6">
-        <button class="btn btn-warning" data-name="cursor">CURSOR</button>
-      </div>
-    </div>
-    <!-- GRANDMA -->
-    <div class="row makers">
-      <div class="col-3 ">
-        <div class="popup">
-          <p>Each grandma produces <span>1</span> cookies per second</p>
-          <p>You have <span class="amountOfMakers grandma-vol">0</span> grandma(s)</p>
-          <p>Your grandma(s) produce <span class="pps grandma-pps">0</span> per second</p>
+      <!-- GRANDMA -->
+      <div class="row makers">
+        <div class="col-3 ">
+          <img class="avatar" src="image/grandma.png" alt="grandma">
+          <div class="popup">
+            <p>Each grandma produces <span>1</span> cookies per second</p>
+            <p>You have <span class="amountOfMakers grandma-vol">0</span> grandma(s)</p>
+            <p>Your grandma(s) produce <span class="pps grandma-pps">0</span> per second</p>
+          </div>
+        </div>
+        <div class="col-3 cost">
+          <span class="price grandma-price">100</span>
+        </div>
+        <div class="col-6">
+          <button class="btn btn-warning my_btn" data-name="grandma">GRANDMA</button>
         </div>
       </div>
-      <div class="col-3 cost">
-        <span class="price grandma-price">100</span>
-      </div>
-      <div class="col-6">
-        <button class="btn btn-warning" data-name="grandma">GRANDMA</button>
-      </div>
-    </div>
-    <!-- FARM -->
-    <div class="row makers">
-      <div class="col-3">
-        <div class="popup">
-          <p>Each farm produces <span>8</span> cookies per second</p>
-          <p>You have <span class="amountOfMakers farm-vol">0</span> farm(s)</p>
-          <p>Your farm(s) produce <span class="pps farm-pps">0</span> per second</p>
+      <!-- FARM -->
+      <div class="row makers">
+        <div class="col-3">
+          <img class="avatar" src="image/farm.png" alt="farm">
+          <div class="popup">
+            <p>Each farm produces <span>8</span> cookies per second</p>
+            <p>You have <span class="amountOfMakers farm-vol">0</span> farm(s)</p>
+            <p>Your farm(s) produce <span class="pps farm-pps">0</span> per second</p>
+          </div>
+        </div>
+        <div class="col-3 cost">
+          <span class="price farm-price">1.1k</span>
+        </div>
+        <div class="col-6">
+          <button class="btn btn-warning my_btn" data-name="farm">FARM</button>
         </div>
       </div>
-      <div class="col-3 cost">
-        <span class="price farm-price">1.1k</span>
-      </div>
-      <div class="col-6">
-        <button class="btn btn-warning" data-name="farm">FARM</button>
-      </div>
-    </div>
-    <!-- BAKERY -->
-    <div class="row makers">
-      <div class="col-3 ">
-        <div class="popup">
-          <p>Each bakery produces <span>47</span> cookies per second</p>
-          <p>You have <span class="amountOfMakers bakery-vol">0</span> bakery(ies)</p>
-          <p>Your bakery(ies) produce <span class="pps bakery-pps">0</span> per second</p>
+      <!-- BAKERY -->
+      <div class="row makers">
+        <div class="col-3 ">
+          <img class="avatar" src="image/bakery.png" alt="bakery">
+          <div class="popup">
+            <p>Each bakery produces <span>47</span> cookies per second</p>
+            <p>You have <span class="amountOfMakers bakery-vol">0</span> bakery(ies)</p>
+            <p>Your bakery(ies) produce <span class="pps bakery-pps">0</span> per second</p>
+          </div>
+        </div>
+        <div class="col-3 cost">
+          <span class="price bakery-price">12k</span>
+        </div>
+        <div class="col-6">
+          <button class="btn btn-warning my_btn" data-name="bakery">BAKERY</button>
         </div>
       </div>
-      <div class="col-3 cost">
-        <span class="price bakery-price">12k</span>
-      </div>
-      <div class="col-6">
-        <button class="btn btn-warning" data-name="bakery">BAKERY</button>
-      </div>
-    </div>
-    <!-- MINE -->
-    <div class="row makers">
-      <div class="col-3 ">
-        <div class="popup">
-          <p>Each mine produces <span>260</span> cookies per second</p>
-          <p>You have <span class="amountOfMakers mine-vol">0</span> mine(s)</p>
-          <p>Yours mine(s) produce <span class="pps mine-pps">0</span> per second</p>
+      <!-- MINE -->
+      <div class="row makers">
+        <div class="col-3 ">
+          <img class="avatar" src="image/mine.png" alt="mine">
+          <div class="popup">
+            <p>Each mine produces <span>260</span> cookies per second</p>
+            <p>You have <span class="amountOfMakers mine-vol">0</span> mine(s)</p>
+            <p>Yours mine(s) produce <span class="pps mine-pps">0</span> per second</p>
+          </div>
+        </div>
+        <div class="col-3 cost">
+          <span class="price mine-price">130k</span>
+        </div>
+        <div class="col-6">
+          <button class="btn btn-warning my_btn" data-name="mine">MINE</button>
         </div>
       </div>
-      <div class="col-3 cost">
-        <span class="price mine-price">130k</span>
+        <!-- RESET -->
+      <div>
+        <button id="reset" class="btn btn-danger"> RESET </button>
       </div>
-      <div class="col-6">
-        <button class="btn btn-warning" data-name="mine">MINE</button>
+      <!-- CONTINUE -->
+      <div>
+        <button id="continue" class="btn btn-danger"> Continue </button>
       </div>
     </div>
-    <div>
-      <button id="reset" class="btn btn-danger"> RESET </button>
-    </div>
-    <div>
-      <button id="continue" class="btn btn-danger"> continue </button>
+      <!-- SCORE -->
+      <div class="col-md-6 col-sm-12 score_board">
+          <div>
+            <h1>SCORE:</h1>
+          </div>
+          <p>You have <span class="amount">0</span> cookies</p>
+          <p>&</p>
+          <p>Produce <span class="productivity">0</span> cookies per second</p>
+      </div>
     </div>
   </section>
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
     <script src="javaScripts/app.js"></script>
+    <script src="javaScripts/animation.js"></script>
   </body>
 </html>
